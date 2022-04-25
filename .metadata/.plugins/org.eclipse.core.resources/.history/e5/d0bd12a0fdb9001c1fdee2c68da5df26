@@ -1,0 +1,5 @@
+package entitities;
+
+public class Aluguel {
+
+}

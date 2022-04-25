@@ -1,0 +1,33 @@
+package application;
+
+import java.util.Scanner;
+
+import entitities.Aluguel;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Quantos quartos deseja alugar: ");
+		int quantityRoom = sc.nextInt();
+		
+		Aluguel[] vectAluguel = new Aluguel[quantityRoom];
+			
+		for(int i = 0; i < vectAluguel.length; i++) {
+			System.out.printf("Rent #" + (i + 1));
+			System.out.print("Name: ");
+			String name = sc.nextLine();
+			System.out.print("Email: ");
+			String email = sc.nextLine();
+			System.out.print("Room: ");
+			int room = sc.nextInt();
+			
+			vectAluguel[i] = new Aluguel(name, email, room);
+		}
+		
+		imprimeVetor(vectAluguel);
+		
+		sc.close();
+	}
+}
