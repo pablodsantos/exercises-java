@@ -19,10 +19,13 @@ public class Program {
 				12);
 				
 		Comment commentPost1 = new Comment("Aqui fica o texto do meu post");
+		Comment commentPost2 = new Comment("Segundo texto adicionado no comentario");
+
 		
 		post1.addComments(commentPost1);
+		post1.addComments(commentPost2);
 		
+		System.out.println("Primeiro comentário: ");
 		System.out.println(post1);
-		System.out.println(post1.getComment().get(0).getTextString());
 	}
 }
