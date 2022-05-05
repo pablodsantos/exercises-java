@@ -6,10 +6,10 @@ public class Account {
 	protected Double balance;
 	
 	public Account() {
+		super();
 	}
 
 	public Account(Integer number, String holder, Double balance) {
-		super();
 		this.number = number;
 		this.holder = holder;
 		this.balance = balance;
@@ -31,11 +31,20 @@ public class Account {
 		this.holder = holder;
 	}
 	
+	public Double getBalance() {
+		return balance;
+	}
+	
 	public void withdraw(Double amount) {
-		balance -= amount;
+		balance -= amount + 5.0;
 	}
 	
 	public void deposit(Double amount) {
 		balance += amount;
+	}
+
+	@Override
+	public String toString() {
+		return "Account [number=" + number + ", holder=" + holder + ", balance=" + balance + "]";
 	}
 }

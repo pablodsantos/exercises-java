@@ -4,6 +4,7 @@ public class BusinessAccount extends Account{
 	private Double loanLimit;
 	
 	public BusinessAccount() {
+		super();
 	}
 
 	public BusinessAccount(Integer number, String holder, Double balance, Double loanLimit) {
@@ -23,5 +24,11 @@ public class BusinessAccount extends Account{
 		if(amount >= loanLimit) {
 			balance += amount;
 		}
+	}
+
+	@Override
+	public String toString() {
+		return "BusinessAccount [loanLimit=" + loanLimit + ", balance=" + balance + ", getLoanLimit()=" + getLoanLimit()
+				+ ", getNumber()=" + getNumber() + ", getHolder()=" + getHolder() + "]";
 	}
 }
