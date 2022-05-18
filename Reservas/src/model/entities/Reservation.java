@@ -39,12 +39,12 @@ public class Reservation {
 
 	public long duration() {
 		long diff = checkOut.getTime() - checkIn.getTime();
-		return TimeUnit.DAYS.convert(diff, TimeUnit.MICROSECONDS);
+		return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 	}
 	
-	public void updateDates(Date checkin, Date checkout) {
-		this.checkIn = checkin;
-		this.checkOut = checkout;
+	public void updateDates(Date checkIn, Date checkOut) {
+		this.checkIn = checkIn;
+		this.checkOut = checkOut;
 	}
 
 	@Override
