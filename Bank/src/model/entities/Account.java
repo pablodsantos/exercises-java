@@ -49,13 +49,17 @@ public class Account {
 	}
 	
 	public void withdraw(Double amount) throws DomainException {
+		verifyWithdraw(amount);
+		balance -= amount;
+	}
+	
+	public void verifyWithdraw(Double amount) throws DomainException{
 		if(amount > getWithdrawLimit()) {
 			throw new DomainException("Amount is lower than allowed for withdrawal.");
 		}
 		if(amount > getBalance() ) {
 			throw new DomainException("Amount is higher than allowed for withdrawal.");
 		}
-		balance -= amount;
 	}
 
 	@Override
